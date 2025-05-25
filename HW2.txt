@@ -18,8 +18,9 @@ select(
 ) as 'id', student from seat, (select count(*) as cnts from Seat) as seat_counts order by id;
 
 
+# Tree Problem
 
-
+select id, if(ISNULL(p_id),'Root',if(id in(select distinct p_id from Tree),'Inner','Leaf')) as 'Type' from Tree;
 
 
 # Department top 3 Salaries
